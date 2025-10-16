@@ -372,9 +372,9 @@ class Solver(QObject):
         R_y = np.tile(self.y, (n, 1)) - np.tile(np.array([self.y]).T, (1, n))
         R = np.sqrt(np.pow(R_x, 2) + np.pow(R_y, 2))
         RATIO = self.SIGMA/R
-        RATIO_7 = np.pow(RATIO, 7)
-        RATIO_13 = np.pow(RATIO, 13)
-        F = 24 * self.EPSILON * (2 * RATIO_13 - RATIO_7)
+        RATIO_1 = np.pow(RATIO, 13) / self.SIGMA
+        RATIO_2 = np.pow(RATIO, 7) / self.SIGMA
+        F = 24 * self.EPSILON * (2 * RATIO_1 - RATIO_2)
 
         
         R_x_n = R_x/R
