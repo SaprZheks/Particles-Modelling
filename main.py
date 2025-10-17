@@ -53,8 +53,8 @@ class UI(Ui_MainWindow):
         ret = []
         
         # Делаем матрицу частиц k на n 
-        n = 20
-        k = 15
+        n = 30
+        k = 30
         k_2 = 0
 
         # Левая верхняя граница
@@ -63,7 +63,7 @@ class UI(Ui_MainWindow):
 
         m_0 = 15        # Вода
         sigma_0 = 40    # Вода
-        epsilon_0 = 700 # Вода
+        epsilon_0 = 600 # Вода
 
         m_2 = 15        # Железо
         sigma_2 = 40    # Железо
@@ -98,8 +98,8 @@ class UI(Ui_MainWindow):
             for j in range(k):
                 ret.append([x_0 + (edge_width+i)*d_0,    # x
                             y_0 + j*d_0,    # y
-                            np.random.random()*self.v_0,             # v_x
-                            np.random.random()*self.v_0,             # v_y
+                            (np.random.random()-0.5)*self.v_0,             # v_x
+                            (np.random.random()-0.5)*self.v_0,             # v_y
                             m_0,            # m
                             sigma_0,        # sigma
                             epsilon_0,      # epsilon
